@@ -1,13 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl3vsckho8oeo"]
+[gd_scene load_steps=3 format=3 uid="uid://cl3vsckho8oeo"]
 
 [ext_resource type="Texture2D" uid="uid://bvk8p74gd3bq3" path="res://assets/kenney/Spritesheet/spritesheet_characters.png" id="1_1oddo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ehim"]
+size = Vector2(42, 48)
 
 [node name="Main" type="Node"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(40, 32)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1
 texture = ExtResource("1_1oddo")
 region_enabled = true
 region_rect = Rect2(0, 0, 56, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-11, 0)
+shape = SubResource("RectangleShape2D_8ehim")
