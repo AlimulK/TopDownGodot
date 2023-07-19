@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="TopOps"
+run/main_scene="res://assets/scenes/main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [importer_defaults]
 
@@ -41,4 +46,5 @@ texture={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
