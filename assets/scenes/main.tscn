@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bvk8p74gd3bq3" path="res://assets/kenney/Spritesheet/spritesheet_characters.png" id="1_1oddo"]
 [ext_resource type="Script" path="res://assets/Player.gd" id="1_kkmeb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ehim"]
-size = Vector2(42, 48)
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ysg7"]
+radius = 19.0
 
 [node name="Main" type="Node"]
 
@@ -20,4 +20,4 @@ region_rect = Rect2(0, 0, 56, 44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-11, 0)
-shape = SubResource("RectangleShape2D_8ehim")
+shape = SubResource("CircleShape2D_8ysg7")
