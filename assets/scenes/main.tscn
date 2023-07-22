@@ -15,9 +15,9 @@ script = ExtResource("1_kkmeb")
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1
 texture = ExtResource("1_1oddo")
+offset = Vector2(10, 0)
 region_enabled = true
 region_rect = Rect2(0, 0, 56, 44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-11, 0)
 shape = SubResource("CircleShape2D_8ysg7")
