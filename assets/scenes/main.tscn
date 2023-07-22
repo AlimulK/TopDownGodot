@@ -1,23 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl3vsckho8oeo"]
+[gd_scene load_steps=3 format=3 uid="uid://cl3vsckho8oeo"]
 
-[ext_resource type="Texture2D" uid="uid://bvk8p74gd3bq3" path="res://assets/kenney/Spritesheet/spritesheet_characters.png" id="1_1oddo"]
-[ext_resource type="Script" path="res://assets/Player.gd" id="1_kkmeb"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8ysg7"]
-radius = 19.0
+[ext_resource type="PackedScene" uid="uid://56ypfs84qqag" path="res://assets/scenes/Character.tscn" id="1_yu0h3"]
+[ext_resource type="PackedScene" uid="uid://diwyv1cdxmfrr" path="res://assets/scenes/Bullet.tscn" id="2_kdmb6"]
 
 [node name="Main" type="Node"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(40, 32)
-script = ExtResource("1_kkmeb")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture_filter = 1
-texture = ExtResource("1_1oddo")
-offset = Vector2(10, 0)
-region_enabled = true
-region_rect = Rect2(0, 0, 56, 44)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_8ysg7")
+[node name="Player" parent="." instance=ExtResource("1_yu0h3")]
+Bullet = ExtResource("2_kdmb6")

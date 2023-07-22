@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://56ypfs84qqag"]
+
+[ext_resource type="Script" path="res://assets/scripts/Player.gd" id="1_wn2fw"]
+[ext_resource type="Texture2D" uid="uid://bvk8p74gd3bq3" path="res://assets/kenney/Spritesheet/spritesheet_characters.png" id="2_upcb4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ysg7"]
+radius = 19.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(40, 32)
+script = ExtResource("1_wn2fw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_upcb4")
+offset = Vector2(10, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 56, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8ysg7")
+
+[node name="EndOfGun" type="Marker2D" parent="."]
+position = Vector2(40, 8)

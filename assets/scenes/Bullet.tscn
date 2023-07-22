@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://diwyv1cdxmfrr"]
+
+[ext_resource type="Script" path="res://assets/scripts/Bullet.gd" id="1_4w400"]
+[ext_resource type="Texture2D" uid="uid://cr6uv5sxtitd3" path="res://assets/kenney/Spritesheet/onlyObjects_default.png" id="1_vfpt2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvnyf"]
+size = Vector2(4, 9)
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_4w400")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vfpt2")
+region_enabled = true
+region_rect = Rect2(198, 46, 4, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yvnyf")
