@@ -4,6 +4,7 @@ signal player_fired(bullet, position, direction)
 @export var speed: int = 100
 @export var Bullet: PackedScene
 @onready var end_of_gun = $EndOfGun
+@onready var gun_direction = $GunDirection
 var screen_size
 
 func _ready() -> void:
@@ -24,7 +25,5 @@ func get_input():
 
 func shoot():
 	var bullet_instance = Bullet.instantiate()
-	bullet_instance.global_position = end_of_gun.global_position
-	var target = get_global_mouse_position()
-	var direction_to_mouse = end_of_gun.global_position.direction_to(target).normalized()
-	emit_signal("player_fired", bullet_instance, end_of_gun.global_position, direction_to_mouse)
+	var direction = (gun_direction.global_position - end_of_gun.global_position).normalized()
+	emit_signal("player_fired", bullet_instance, end_of_gun.global_position, direction)

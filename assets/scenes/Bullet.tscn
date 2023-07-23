@@ -7,6 +7,7 @@
 size = Vector2(4, 9)
 
 [node name="Bullet" type="Area2D"]
+rotation = 1.5708
 script = ExtResource("1_4w400")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

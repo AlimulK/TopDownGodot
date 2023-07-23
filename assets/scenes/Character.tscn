@@ -22,3 +22,6 @@ shape = SubResource("CircleShape2D_8ysg7")
 
 [node name="EndOfGun" type="Marker2D" parent="."]
 position = Vector2(40, 8)
+
+[node name="GunDirection" type="Marker2D" parent="."]
+position = Vector2(44, 8)
