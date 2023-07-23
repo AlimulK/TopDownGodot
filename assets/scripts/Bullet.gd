@@ -1,6 +1,6 @@
 extends Node
 
-@export var speed: int = 300
+@export var speed: int = 10
 
 var direction := Vector2.ZERO
 
