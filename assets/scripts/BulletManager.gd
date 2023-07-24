@@ -1,16 +1,6 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func handle_bullet_spawn(bullet, position, direction):
+func handle_bullet_spawn(bullet: Bullet, position: Vector2, direction: Vector2):
 	add_child(bullet)
 	bullet.global_position = position
 	bullet.set_direction(direction)
