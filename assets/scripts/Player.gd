@@ -5,6 +5,7 @@ signal player_fired(bullet, position, direction)
 @export var Bullet: PackedScene
 @onready var end_of_gun = $EndOfGun
 @onready var gun_direction = $GunDirection
+@onready var attack_cooldown = $AttackCooldown
 var screen_size
 
 func _ready() -> void:
@@ -24,6 +25,7 @@ func get_input():
 	velocity = input_direction * speed
 
 func shoot():
-	var bullet_instance = Bullet.instantiate()
-	var direction = (gun_direction.global_position - end_of_gun.global_position).normalized()
-	emit_signal("player_fired", bullet_instance, end_of_gun.global_position, direction)
+	if attack_cooldown.is_stopped():
+		var bullet_instance = Bullet.instantiate()
+		var direction = (gun_direction.global_position - end_of_gun.global_position).normalized()
+		emit_signal("player_fired", bullet_instance, end_of_gun.global_position, direction)
