@@ -8,6 +8,7 @@ signal player_fired(bullet, position, direction)
 @onready var attack_cooldown = $AttackCooldown
 @onready var animation_player = $AnimationPlayer
 var screen_size
+var health:int = 100
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -32,3 +33,8 @@ func shoot():
 		emit_signal("player_fired", bullet_instance, end_of_gun.global_position, direction)
 		attack_cooldown.start()
 		animation_player.play("muzzle_flash")
+
+# probably replace this, not sure I want health for player
+func handle_hit():
+	health -= 20
+	print("player hit")
