@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://diwyv1cdxmfrr"]
 
-[ext_resource type="Script" path="res://assets/scripts/Bullet.gd" id="1_4w400"]
+[ext_resource type="Script" path="res://assets/items/Bullet.gd" id="1_ntyli"]
 [ext_resource type="Texture2D" uid="uid://cr6uv5sxtitd3" path="res://assets/kenney/Spritesheet/onlyObjects_default.png" id="1_vfpt2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yvnyf"]
@@ -8,7 +8,7 @@ size = Vector2(4, 9)
 
 [node name="Bullet" type="Area2D"]
 rotation = 1.5708
-script = ExtResource("1_4w400")
+script = ExtResource("1_ntyli")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vfpt2")
@@ -17,3 +17,10 @@ region_rect = Rect2(198, 46, 4, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yvnyf")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
