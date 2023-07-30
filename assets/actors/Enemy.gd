@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-var health:int = 100
+@onready var health = $Health
 
 func handle_hit():
-	health -= 20
+	health.health -= 20
 	print("enemy hit")
+	if health.health <= 0:
+		queue_free()

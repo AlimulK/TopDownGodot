@@ -10,6 +10,7 @@
 script = ExtResource("1_oehrn")
 
 [node name="Player" parent="." instance=ExtResource("2_w2xpq")]
+speed = 100
 Bullet = ExtResource("3_xdbs3")
 
 [node name="Enemy" parent="." instance=ExtResource("4_dgna6")]

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 signal player_fired(bullet, position, direction)
 @export var speed: int = 100
@@ -7,8 +8,8 @@ signal player_fired(bullet, position, direction)
 @onready var gun_direction = $GunDirection
 @onready var attack_cooldown = $AttackCooldown
 @onready var animation_player = $AnimationPlayer
+@onready var health = $Health
 var screen_size
-var health:int = 100
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
@@ -36,5 +37,5 @@ func shoot():
 
 # probably replace this, not sure I want health for player
 func handle_hit():
-	health -= 20
+	health.health -= 20
 	print("player hit")
